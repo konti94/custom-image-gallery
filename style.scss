@@ -1,0 +1,137 @@
+$bgBlue: #001d38;
+$cardBlue: #0a2640;
+$boxShadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+
+@mixin circle($i) {
+	border-radius: 100%;
+	height: $i;
+	width: $i;
+}
+
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100vh;
+}
+
+body {
+	background: $bgBlue;
+	font-size: 16px;
+	overflow: hidden;
+}
+
+.center {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	padding: 0 1rem;
+}
+
+.main-picture {
+	align-items: center;
+	border-radius: 0.5rem;
+	box-shadow: $boxShadow;
+	display: flex;
+	height: calc(80vh - 256px - 10%);
+	justify-content: center;
+	overflow: hidden;
+
+	@media screen and (min-width: 1440px) {
+		height: calc(100vh - 256px - 10%);
+		width: 56rem;
+	}
+
+	& > img {
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+}
+
+.carousel {
+	width: 100%;
+
+	@media screen and (min-width: 1440px) {
+		width: 56rem;
+	}
+}
+
+.carousel-wrapper {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	overflow: hidden;
+	width: 100%;
+
+	& > .carousel-inner {
+		display: flex;
+		gap: 1rem;
+		padding: 1rem;
+		transition: all 1s ease-in-out;
+	}
+}
+
+.carousel-card {
+	appearance: none;
+	background-color: $cardBlue;
+	border: none;
+	border-radius: 0.5rem;
+	box-shadow: $boxShadow;
+	cursor: pointer;
+	height: 12rem;
+	overflow: hidden;
+	padding: 0;
+
+	&.active {
+		opacity: 0.4;
+	}
+
+	& > img {
+		border-radius: 0.5rem;
+		display: block;
+		height: 100%;
+		transition: all ease 0.3s;
+		width: 17.5rem;
+	}
+
+	&:hover > img {
+		transform: scale(1.2);
+		transition: all ease 0.3s;
+	}
+}
+
+.carousel-controllers {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: center;
+
+	& > button {
+		all: unset;
+		background: lighten($cardBlue, 10);
+		cursor: pointer;
+		margin: 0 0.125rem;
+		position: relative;
+		user-select: none;
+		@include circle(1rem);
+
+		&.active {
+			&:after {
+				background: $bgBlue;
+				content: '';
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				@include circle(0.5rem);
+			}
+		}
+	}
+}
