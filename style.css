@@ -1,0 +1,126 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background: #001d38;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.main-picture {
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  height: calc(80vh - 256px - 10%);
+  justify-content: center;
+  overflow: hidden;
+}
+@media screen and (min-width: 1440px) {
+  .main-picture {
+    height: calc(100vh - 256px - 10%);
+    width: 56rem;
+  }
+}
+.main-picture > img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.carousel {
+  width: 100%;
+}
+@media screen and (min-width: 1440px) {
+  .carousel {
+    width: 56rem;
+  }
+}
+
+.carousel-wrapper {
+  display: flex;
+  grid-gap: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-wrapper > .carousel-inner {
+  display: flex;
+  grid-gap: 1rem;
+  padding: 1rem;
+  transition: all 1s ease-in-out;
+}
+
+.carousel-card {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #0a2640;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  height: 12rem;
+  overflow: hidden;
+  padding: 0;
+}
+.carousel-card > img {
+  border-radius: 0.5rem;
+  display: block;
+  height: 100%;
+  transition: all ease 0.3s;
+  width: 17.5rem;
+}
+.carousel-card:hover > img {
+  transform: scale(1.2);
+  transition: all ease 0.3s;
+}
+
+.carousel-controllers {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.carousel-controllers > button {
+  all: unset;
+  background: #11406c;
+  cursor: pointer;
+  margin: 0 0.125rem;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border-radius: 100%;
+  height: 1rem;
+  width: 1rem;
+}
+.carousel-controllers > button.active:after {
+  background: #001d38;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  height: 0.5rem;
+  width: 0.5rem;
+}/*# sourceMappingURL=style.css.map */
