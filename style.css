@@ -83,6 +83,9 @@ body {
   overflow: hidden;
   padding: 0;
 }
+.carousel-card.active {
+  opacity: 0.4;
+}
 .carousel-card > img {
   border-radius: 0.5rem;
   display: block;

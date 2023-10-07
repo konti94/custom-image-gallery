@@ -90,6 +90,10 @@ body {
 	overflow: hidden;
 	padding: 0;
 
+	&.active {
+		opacity: 0.4;
+	}
+
 	& > img {
 		border-radius: 0.5rem;
 		display: block;
