@@ -13,4 +13,4 @@ Készíts egy képgalériát
 
 ## Megoldás
 
-HTML, CSS és Javascript segítségével készítettem egy olyan képgalériát ami lapozót (carouselt) is tartalmaz.
+HTML, CSS és Typescript segítségével készítettem egy olyan képgalériát ami lapozót (carouselt) is tartalmaz, mindezt OOP szemlélet alapján.
